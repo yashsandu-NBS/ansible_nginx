@@ -1,0 +1,10 @@
+- hosts: 127.0.0.1
+  connection: local
+  become: true
+  tasks:
+  - name: 'Launch NGINX Container'
+    community.general.docker_container:
+      image: 'nginx:latest'
+      name: nginx
+      ports:
+      - '81:80'
